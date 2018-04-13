@@ -1,0 +1,43 @@
+<h3 class="add-person-heading">Add/Update Person's Details </h3>
+<hr>
+
+<div class="form-group">
+    Name :
+    <input class="form-control"
+		type ="text"
+		placeholder="Enter name here."
+		name= "name"
+		[(ngModel)]="personModel.name">
+</div>
+
+<div class="form-group">
+	Gender :
+	<select class="form-control" name="gender" [(ngModel)]="personModel.gender">
+		<option value='Male'> Male </option>
+		<option value='Female'> Female </option>
+	</select>
+</div>
+
+<div class="form-group">
+	Age :
+	<input class="form-control"
+		type ="number"
+		placeholder="Enter Age here."
+		name="age"
+		[(ngModel)]="personModel.age">
+</div>
+
+<div class="form-group">
+	Mobile No. :
+	<input class="form-control"
+		type ="number"
+		placeholder="Enter Mobile No. here."
+		name="mobileno"
+		[(ngModel)]="personModel.mobileno">
+</div>
+
+<div class="form-group">
+	<button *ngIf="isInsert" class="btn btn-primary" (click)="addPerson()">Add New Detail</button>
+    <button  *ngIf="!isInsert" class="btn btn-primary" (click)="updatePerson()">Update</button>
+	<button  class="btn" (click)="resetAddPerson()">Reset</button>
+</div>

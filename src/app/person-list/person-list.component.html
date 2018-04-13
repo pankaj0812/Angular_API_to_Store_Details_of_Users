@@ -1,0 +1,47 @@
+<h3 class="person-list-heading"><a href="/persons">List of People</a></h3>
+<hr>
+
+<div class="list-persons">
+    <ul class="list-group">
+    	<li *ngFor="let person of personsList"
+			class="list-group-item"
+			(click)="personSelected(person)"
+			[class.active]="isSelected(person) && isReset">
+
+      <div class="container" >
+        <div class="row">
+
+        <table>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>: </td>
+              <td>{{ person.name}}</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>: </td>
+              <td>{{ person.age}}</td>
+            </tr>
+            <tr>
+              <td>Gender</td>
+              <td>: </td>
+              <td>{{ person.gender}}</td>
+            </tr>
+            <tr>
+              <td>Mobile No.</td>
+              <td>: </td>
+              <td>{{ person.mobileno}}</td>
+            </tr>
+
+          </tbody>
+          <div class="deletePersons" (click)="deletePerson(person._id)">
+            <button class="btn btn-danger" type="submit">DELETE</button>
+          </div>
+        </table>
+
+       </div>
+      </div>
+		</li>
+	</ul>
+</div>
